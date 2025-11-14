@@ -5,12 +5,14 @@ It handles data type inference and SQL syntax generation.
 """
 import re
 from pathlib import Path
-
 import pandas as pd
-def _sanitize_column_name(col_name: str) -> str:
+
+def _sanitize_column_name(col_name) -> str:
     """(Internal) Sanitizes column names for SQL compatibility by quoting them."""
-    if re.match(r"^[a-zA-Z_][a-zA-Z0-9_]*$", col_name):
-        return col_name
+    s = str(col_name)
+    s_escaped = s.replace('"', "''")
+    if re.match(r"^[a-zA-Z_][a-zA-Z0-9_]*$", s_escaped):
+        return s_escaped
     else:
         return f'"{col_name}"'
 

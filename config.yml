@@ -1,0 +1,34 @@
+# ============================================================================
+# Project Configuration File
+# ============================================================================
+# This file centralizes all paths and settings for the project scripts.
+
+# --- Directory Paths ---
+# Defines the locations for data, scripts, and output files.
+paths:
+  # Root directory of the project (optional, can be inferred)
+  root: .
+  
+  # Directory containing the raw, unprocessed data files.
+  raw_data_dir: data/poc/interim
+  
+  # Directory for processed data (e.g., cleaned files, features).
+  processed_data_dir: data/processed
+  
+  # Directory for trained model artifacts.
+  models_dir: models
+  
+  # Directory for utility and processing scripts.
+  scripts_dir: scripts
+
+# --- File Paths ---
+# Defines specific output filenames.
+files:
+  # The name of the generated SQL script for setting up Snowflake schemas.
+  snowflake_setup_sql: scripts/snowflake_db_setup.sql
+
+# --- Script Settings ---
+settings:
+  # Number of rows to sample from each CSV for data type inference.
+  # A larger number is more accurate but slower. 0 means read the whole file.
+  dtype_inference_rows: 1000

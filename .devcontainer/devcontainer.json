@@ -1,19 +1,35 @@
 {
-  "name": "Python 3",
+  "name": "gamerecommenderapp",
+
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
+  "runArgs": [
+        // avoid UID/GID remapping under rootless Podman
+        "--userns=keep-id"
+      ],
   "customizations": {
     "codespaces": {
       "openFiles": [
         "README.md",
         "app.py"
-      ]
+      ],
+      
     },
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+
     "vscode": {
-      "settings": {},
+      "settings": {
+                "python.testing.pytestArgs": ["tests",],
+                "python.testing.unittestEnabled": false,
+                "python.testing.pytestEnabled": true,
+                "python.defaultInterpreterPath": "/workspaces/gamerecommenderapp/.venv/bin/python",
+                "python.testing.pytestPath": "/workspaces/gamerecommenderapp/.venv/bin/pytest"
+            },
       "extensions": [
         "ms-python.python",
-        "ms-python.vscode-pylance"
+        "ms-python.vscode-pylance",
+        "editorconfig.editorconfig"
       ]
     }
   },
