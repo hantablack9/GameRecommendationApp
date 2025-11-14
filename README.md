@@ -2,12 +2,11 @@
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Release](https://img.shields.io/github/v/release/hantablack9/gamerecommendationapp)](https://img.shields.io/github/v/release/hantablack9/gamerecommendationapp)
 [![Build status](https://img.shields.io/github/actions/workflow/status/hantablack9/gamerecommendationapp/main.yml?branch=main)](https://github.com/hantablack9/gamerecommendationapp/actions/workflows/main.yml?query=branch%3Amain)
 [![codecov](https://codecov.io/gh/hantablack9/gamerecommendationapp/branch/main/graph/badge.svg)](https://codecov.io/gh/hantablack9/gamerecommendationapp)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/hantablack9/gamerecommendationapp)](https://img.shields.io/github/commit-activity/m/hantablack9/gamerecommendationapp)
-[![License](https://img.shields.io/github/license/hantablack9/gamerecommendationapp)](https://img.shields.io/github/license/hantablack9/gamerecommendationapp)
+[![License](https://img.shields.io/github/license/hantablack9/gamerecommendationapp)](LICENSE)
 
 
 A production-quality hybrid recommendation system combining **RAG (Retrieval-Augmented Generation)** with **Collaborative Filtering** to recommend board games. Built as a portfolio project showcasing end-to-end ML engineering skills.
