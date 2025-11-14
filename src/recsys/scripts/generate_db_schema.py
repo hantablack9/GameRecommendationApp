@@ -3,9 +3,12 @@
 This module is responsible for generating a Snowflake SQL schema from CSV files.
 It handles data type inference and SQL syntax generation.
 """
+
 import re
 from pathlib import Path
+
 import pandas as pd
+
 
 def _sanitize_column_name(col_name) -> str:
     """(Internal) Sanitizes column names for SQL compatibility by quoting them."""
@@ -16,20 +19,22 @@ def _sanitize_column_name(col_name) -> str:
     else:
         return f'"{col_name}"'
 
+
 def _map_pandas_to_snowflake_type(pd_dtype: str) -> str:
     """(Internal) Maps a pandas data type to a corresponding Snowflake SQL type."""
     dtype_str = str(pd_dtype).lower()
-    if 'int' in dtype_str:
-        return 'NUMBER'
-    if 'float' in dtype_str:
-        return 'FLOAT'
-    if 'bool' in dtype_str:
-        return 'BOOLEAN'
-    if 'datetime' in dtype_str:
-        return 'TIMESTAMP_NTZ'
-    if 'object' in dtype_str:
-        return 'VARCHAR'
-    return 'VARCHAR'
+    if "int" in dtype_str:
+        return "NUMBER"
+    if "float" in dtype_str:
+        return "FLOAT"
+    if "bool" in dtype_str:
+        return "BOOLEAN"
+    if "datetime" in dtype_str:
+        return "TIMESTAMP_NTZ"
+    if "object" in dtype_str:
+        return "VARCHAR"
+    return "VARCHAR"
+
 
 def generate_schema_sql_from_csvs(data_dir: Path, sample_rows: int) -> str:
     """
@@ -63,7 +68,7 @@ CREATE OR REPLACE STAGE my_internal_stage FILE_FORMAT = my_csv_format;
 -- ============================================================================
 """
     table_creation_statements = []
-    csv_files = sorted(list(data_dir.glob("*.csv")))
+    csv_files = sorted(data_dir.glob("*.csv"))
 
     if not csv_files:
         print(f"Warning: No CSV files found in '{data_dir}'.")
@@ -71,8 +76,8 @@ CREATE OR REPLACE STAGE my_internal_stage FILE_FORMAT = my_csv_format;
 
     for csv_file in csv_files:
         try:
-            df_sample = pd.read_csv(csv_file, nrows=sample_rows if sample_rows > 0 else None, encoding='utf-8')
-            table_name = csv_file.stem.upper().replace('-', '_')
+            df_sample = pd.read_csv(csv_file, nrows=sample_rows if sample_rows > 0 else None, encoding="utf-8")
+            table_name = csv_file.stem.upper().replace("-", "_")
 
             cols_sql = ",\n".join([
                 f"    {_sanitize_column_name(col)} {_map_pandas_to_snowflake_type(dtype)}"

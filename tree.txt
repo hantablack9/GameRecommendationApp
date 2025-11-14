@@ -1,0 +1,116 @@
+.
+|-- CONTRIBUTING.md
+|-- Dockerfile
+|-- LICENSE
+|-- Makefile
+|-- README.md
+|-- codecov.yaml
+|-- config.yml
+|-- data
+|   |-- embeddings
+|   |-- events
+|   |   `-- user_interactions.jsonl
+|   |-- poc
+|   |   |-- embeddings
+|   |   |-- interim
+|   |   |   |-- artists_reduced.csv.gz
+|   |   |   |-- bgg_data_documentation.txt.gz
+|   |   |   |-- designers_reduced.csv.gz
+|   |   |   |-- games.csv.gz
+|   |   |   |-- mechanics.csv.gz
+|   |   |   |-- publishers_reduced.csv.gz
+|   |   |   |-- ratings_distribution.csv.gz
+|   |   |   |-- subcategories.csv.gz
+|   |   |   |-- themes.csv.gz
+|   |   |   `-- user_ratings.csv.gz
+|   |   |-- processed
+|   |   `-- raw
+|   |       `-- poc_kaggle.zip
+|   |-- processed
+|   `-- raw
+|-- docker-compose.yml
+|-- docs
+|   |-- api_documentation.md
+|   |-- architecture.md
+|   |-- index.md
+|   |-- model_design.md
+|   `-- modules.md
+|-- logs
+|   |-- app_events.log
+|   |-- beta_cache.log
+|   `-- dbt.log
+|-- main.py
+|-- mkdocs.yml
+|-- models
+|   `-- v1
+|       |-- cf_model.pkl
+|       |-- metadata.json
+|       `-- rag_index.faiss
+|-- notebooks
+|   |-- 01_eda.ipynb
+|   |-- 02_model_experiments.ipynb
+|   `-- streamlit_poc.py
+|-- pyproject.toml
+|-- requirements.txt
+|-- setting-up.txt
+|-- src
+|   |-- __init__.py
+|   `-- recsys
+|       |-- __init__.py
+|       |-- api
+|       |   |-- __init__.py
+|       |   |-- dependencies.py
+|       |   |-- main.py
+|       |   |-- routes
+|       |   `-- schemas
+|       |-- config
+|       |   |-- __init__.py
+|       |   |-- logging_config.py
+|       |   `-- settings.py
+|       |-- data
+|       |   |-- __init__.py
+|       |   |-- feature_engineering.py
+|       |   |-- loader.py
+|       |   |-- preprocessor.py
+|       |   `-- scraper.py
+|       |-- logging
+|       |   |-- __init__.py
+|       |   |-- app_logger.py
+|       |   `-- logging_backends
+|       |-- models
+|       |   |-- __init__.py
+|       |   |-- base.py
+|       |   |-- collaborative_filter.py
+|       |   |-- hybrid_recommender.py
+|       |   |-- rag_recommender.py
+|       |   `-- trainer.py
+|       |-- scripts
+|       |   |-- __init__.py
+|       |   |-- generate_db_schema.py
+|       |   |-- generate_embeddings.py
+|       |   |-- load_config.py
+|       |   |-- setup_snowflake_db.py
+|       |   `-- snowflake_db_setup.sql
+|       |-- tracking
+|       |   |-- __init__.py
+|       |   `-- interaction_tracker.py
+|       `-- utils
+|           |-- __init__.py
+|           |-- cache.py
+|           |-- clustering.py
+|           `-- distance_metrics.py
+|-- tests
+|   |-- __init__.py
+|   |-- conftest.py
+|   |-- test_api
+|   |   `-- test_recommendations.py
+|   |-- test_data
+|   `-- test_models
+|       |-- test_collaborative_filter.py
+|       |-- test_hybrid.py
+|       `-- test_rag_recommender.py
+|-- tox.ini
+|-- tree.txt
+`-- uv.lock
+
+32 directories, 81 files

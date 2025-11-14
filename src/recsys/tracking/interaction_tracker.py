@@ -6,10 +6,13 @@ These events are the lifeblood of the recommendation model and are treated
 as structured data, not as application logs. They are saved in a format
 (e.g., JSON Lines) suitable for batch processing and model retraining.
 """
+
 import json
+from datetime import UTC, datetime
 from pathlib import Path
-from datetime import datetime, timezone
+
 from src.logging.app_logger import logger
+
 
 class InteractionTracker:
     """
@@ -17,6 +20,7 @@ class InteractionTracker:
     Events are stored in a JSON Lines file, with each line representing
     a single event.
     """
+
     def __init__(self, storage_path: Path):
         self.storage_path = storage_path
         # Ensure the directory exists
@@ -26,11 +30,11 @@ class InteractionTracker:
         """Appends a single event as a new line in the JSON Lines file."""
         try:
             # Use 'a' for append mode
-            with open(self.storage_path, 'a', encoding='utf-8') as f:
-                f.write(json.dumps(event_data) + '\n')
+            with open(self.storage_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps(event_data) + "\n")
         except Exception as e:
             # If tracking fails, log it to the *observability* logger
-            
+
             logger.error(f"Failed to write interaction event: {e}", extra={"event_data": event_data})
 
     def track_event(self, user_id: str, event_type: str, session_id: str, event_details: dict):
@@ -44,14 +48,15 @@ class InteractionTracker:
             event_details (dict): A dictionary containing event-specific data.
         """
         event = {
-            "event_id": f"{session_id}-{int(datetime.now(timezone.utc).timestamp() * 1000)}",
+            "event_id": f"{session_id}-{int(datetime.now(UTC).timestamp() * 1000)}",
             "event_type": event_type,
-            "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+            "timestamp_utc": datetime.now(UTC).isoformat(),
             "user_id": user_id,
             "session_id": session_id,
-            "details": event_details
+            "details": event_details,
         }
         self._write_event(event)
+
 
 # --- Create a singleton instance for the application to use ---
 # This is configured to save events to a dedicated data file.

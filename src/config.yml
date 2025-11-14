@@ -8,16 +8,19 @@
 paths:
   # Root directory of the project (optional, can be inferred)
   root: .
-  
+
   # Directory containing the raw, unprocessed data files.
-  raw_data_dir: data/poc/interim
-  
+  raw_data_dir: data/poc/raw
+  raw_data_file: poc_kaggle.zip
+  extract_data_dir: data/poc/interim
+
+
   # Directory for processed data (e.g., cleaned files, features).
   processed_data_dir: data/processed
-  
+
   # Directory for trained model artifacts.
   models_dir: models
-  
+
   # Directory for utility and processing scripts.
   scripts_dir: scripts
 

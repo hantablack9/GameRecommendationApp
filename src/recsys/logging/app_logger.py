@@ -11,15 +11,12 @@ Application code should ONLY import and use the `logger` from this module.
 
 # --- Backend Selection ---
 # We point to our new default logger which handles both console and file logging.
-from src.logging.logging_backends.default_logger import logger as backend_logger
-snow
+from src.recsys.logging.logging_backends.default_logger import logger as backend_logger
+
 # --- Application-Specific Context ---
 # .bind() creates a new logger with bound data that will be included in all
 # subsequent log messages. This is perfect for adding consistent context.
-logger = backend_logger.bind(
-    app_name="BoardGameRecommender",
-    version="0.1.0"
-)
+logger = backend_logger.bind(app_name="BoardGameRecommender", version="0.1.0")
 
 # --- How to Observe and Query (Documentation for the developer) ---
 #

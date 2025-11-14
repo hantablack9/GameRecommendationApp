@@ -7,9 +7,12 @@ This setup provides a two-pronged approach:
 2.  Machine-Readable File Logs: Saves logs in a structured JSON format,
     which is essential for persistence, observation, and querying.
 """
+
 import sys
-from loguru import logger
 from pathlib import Path
+
+from loguru import logger
+
 
 def setup_default_logger():
     """
@@ -41,12 +44,13 @@ def setup_default_logger():
         format="{message}",  # The serializer handles the structure.
         serialize=True,  # <-- The most important part! This creates JSON logs.
         rotation="10 MB",  # Start a new file when the log reaches 10 MB.
-        retention="7 days", # Keep log files for up to 7 days.
+        retention="7 days",  # Keep log files for up to 7 days.
         catch=True,  # Catch and log exceptions from your code automatically.
     )
 
     return logger
 
+
 # The logger instance that will be imported by the facade.
-# Renamed to 'logger' for clarity, as it's the sole export.
-logger = setup_default_logger()
+# Renamed to 'logger_' for clarity, as it's the sole export.
+logger_ = setup_default_logger()
