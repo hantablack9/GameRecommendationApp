@@ -894,7 +894,7 @@ For commercial use, please contact the author.
 
 ## 📧 Contact
 
-**Your Name**  
+**Hanish Paturi**  
 - Email: hanishpaturi1320@gmail.com  
 - LinkedIn: [linkedin.com/in/hanish-paturi](https://linkedin.com/in/hanish-paturi)  
 - GitHub: [@hantablack9](https://github.com/hantablack9)  
