@@ -8,8 +8,8 @@ models/
 gamerecommenderapp/*
 boardgame_recommender_app/*
 setting-up.txt
-notebooks/*.txt
-notebooks/*.gz
+# notebooks/*.txt
+# notebooks/*.gz
 
 docs/source
 
