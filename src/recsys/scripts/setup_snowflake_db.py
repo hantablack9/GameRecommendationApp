@@ -1,4 +1,4 @@
-# scripts/setup_snowflake_db.py
+# src/recsys/scripts/setup_snowflake_db.py
 """
 Main orchestrator script to set up the Snowflake database.
 It loads configuration, generates the DB schema, and executes it.

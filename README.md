@@ -37,7 +37,31 @@ A production-quality hybrid recommendation system combining **RAG (Retrieval-Aug
 
 ## 🏗️ Architecture
 
+### **High-level architecture**
+
+```plaintext
+┌──────────────────┐   1. Load  ┌──────────────────┐   2. Transform  ┌─────────────────────┐
+│   Raw CSV Data   ├───────────►│ Snowflake (RAW)  ├────────────────►│Snowflake (ANALYTICS)│
+│   (.csv.gz)      │ (Python)   │     Schema       │      (dbt)      │      Schema         │
+└──────────────────┘            └──────────────────┘                 └─────────┬───────────┘
+                                                                               │ 3. Generate Embeddings
+                                                                               │ (Python Script)
+                                                                               ▼
+                                                                     ┌───────────────────┐
+                                                                     │  RAG Artifacts    │
+                                                                     │ - rag_index.faiss │
+                                                                     │ - metadata.json   │
+                                                                     └─────────┬─────────┘
+                                                                               │ 4. Load for Serving
+                                                                               │
+                                                                               ▼
+                                                                     ┌───────────────────┐
+                                                                     │   FastAPI Server  │
+                                                                     │  (for inference)  │
+                                                                     └───────────────────┘
 ```
+
+```plaintext
 ┌─────────────────────────────────────────────────────────┐
 │                    Data Sources                         │
 │  • Kaggle BGG Dataset (22k games, 19M ratings)         │
@@ -89,6 +113,7 @@ A production-quality hybrid recommendation system combining **RAG (Retrieval-Aug
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Python 3.11+
 - uv (Python package manager, for installation)
 - 8GB RAM (for embedding generation)
@@ -313,6 +338,11 @@ Response:
 ---
 
 ## 📁 Project Structure
+
+**Generate tree:** 
+```bash
+tree -L 4 -I "__pycache__|.venv|.pytest_cache|.git|build|dist|.hatch" > tree.txt
+```
 
 ```
 boardgame-recommender/
@@ -859,7 +889,7 @@ make test
 
 ## 📝 License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+Apache 2.0 License - see [LICENSE](LICENSE) file for details.
 
 This project is free to use for:
 - Personal projects
@@ -928,7 +958,7 @@ For commercial use, please contact the author.
 
 **"Module not found" error:**
 ```bash
-export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+uv pip install -e .[dev] 
 ```
 
 **"Model not trained" error:**

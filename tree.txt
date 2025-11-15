@@ -13,15 +13,25 @@
 |   |-- poc
 |   |   |-- embeddings
 |   |   |-- interim
+|   |   |   |-- artists_reduced.csv
 |   |   |   |-- artists_reduced.csv.gz
+|   |   |   |-- bgg_data_documentation.txt
 |   |   |   |-- bgg_data_documentation.txt.gz
+|   |   |   |-- designers_reduced.csv
 |   |   |   |-- designers_reduced.csv.gz
+|   |   |   |-- games.csv
 |   |   |   |-- games.csv.gz
+|   |   |   |-- mechanics.csv
 |   |   |   |-- mechanics.csv.gz
+|   |   |   |-- publishers_reduced.csv
 |   |   |   |-- publishers_reduced.csv.gz
+|   |   |   |-- ratings_distribution.csv
 |   |   |   |-- ratings_distribution.csv.gz
+|   |   |   |-- subcategories.csv
 |   |   |   |-- subcategories.csv.gz
+|   |   |   |-- themes.csv
 |   |   |   |-- themes.csv.gz
+|   |   |   |-- user_ratings.csv
 |   |   |   `-- user_ratings.csv.gz
 |   |   |-- processed
 |   |   `-- raw
@@ -39,7 +49,6 @@
 |   |-- app_events.log
 |   |-- beta_cache.log
 |   `-- dbt.log
-|-- main.py
 |-- mkdocs.yml
 |-- models
 |   `-- v1
@@ -48,7 +57,6 @@
 |       `-- rag_index.faiss
 |-- notebooks
 |   |-- 01_eda.ipynb
-|   |-- 02_model_experiments.ipynb
 |   `-- streamlit_poc.py
 |-- pyproject.toml
 |-- requirements.txt
@@ -63,20 +71,23 @@
 |       |   |-- main.py
 |       |   |-- routes
 |       |   `-- schemas
-|       |-- config
+|       |-- config_management
 |       |   |-- __init__.py
+|       |   |-- load_config.py
 |       |   |-- logging_config.py
 |       |   `-- settings.py
 |       |-- data
 |       |   |-- __init__.py
+|       |   |-- extract.py
 |       |   |-- feature_engineering.py
 |       |   |-- loader.py
 |       |   |-- preprocessor.py
-|       |   `-- scraper.py
+|       |   `-- transform.py
 |       |-- logging
 |       |   |-- __init__.py
 |       |   |-- app_logger.py
 |       |   `-- logging_backends
+|       |-- main.py
 |       |-- models
 |       |   |-- __init__.py
 |       |   |-- base.py
@@ -88,7 +99,6 @@
 |       |   |-- __init__.py
 |       |   |-- generate_db_schema.py
 |       |   |-- generate_embeddings.py
-|       |   |-- load_config.py
 |       |   |-- setup_snowflake_db.py
 |       |   `-- snowflake_db_setup.sql
 |       |-- tracking
@@ -113,4 +123,4 @@
 |-- tree.txt
 `-- uv.lock
 
-32 directories, 81 files
+32 directories, 91 files

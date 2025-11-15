@@ -1,4 +1,4 @@
-# scripts/generate_db_schema.py
+# src/recsys/scripts/generate_db_schema.py
 """
 This module is responsible for generating a Snowflake SQL schema from CSV files.
 It handles data type inference and SQL syntax generation.
