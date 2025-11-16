@@ -16,26 +16,26 @@ There is a clear market need for a more intelligent, accessible, and personalize
 The primary market for this product is the global community of board game enthusiasts, which can be segmented as follows:
 
 * **Persona 1: The "Gateway" Gamer (Newcomer)**
-* **Description:** Has played a few popular "gateway" games (e.g., *Catan*, *Ticket to Ride*) and is eager to explore more, but doesn't know where to start.
-* **Needs:** Simple, similarity-based recommendations ("If you like X, you'll love Y"). They need to build confidence and vocabulary in game mechanics and themes.
-* **Pain Points:** Overwhelmed by BGG's complexity; recommendations from friends are limited to what they own.
+  * **Description:** Has played a few popular "gateway" games (e.g., *Catan*, *Ticket to Ride*) and is eager to explore more, but doesn't know where to start.
+  * **Needs:** Simple, similarity-based recommendations ("If you like X, you'll love Y"). They need to build confidence and vocabulary in game mechanics and themes.
+  * **Pain Points:** Overwhelmed by BGG's complexity; recommendations from friends are limited to what they own.
 
 * **Persona 2: The "Dedicated" Hobbyist (Experienced Player)**
-* **Description:** Owns 20-100+ games, actively rates games on BGG, and has well-defined tastes (e.g., "I love heavy Euro-style games but dislike high-luck dice games").
-* **Needs:** Deeply personalized recommendations that understand their nuanced preferences. They value novelty and the discovery of "hidden gems."
-* **Pain Points:** Standard recommendations are often too popular or obvious. They want a system that "gets" their unique taste profile.
+  * **Description:** Owns 20-100+ games, actively rates games on BGG, and has well-defined tastes (e.g., "I love heavy Euro-style games but dislike high-luck dice games").
+  * **Needs:** Deeply personalized recommendations that understand their nuanced preferences. They value novelty and the discovery of "hidden gems."
+  * **Pain Points:** Standard recommendations are often too popular or obvious. They want a system that "gets" their unique taste profile.
 
 * **Persona 3: The "Social" Organizer (Group Planner)**
-* **Description:** Responsible for choosing games for their game night group, which may have varying player counts and preferences.
-* **Needs:** Context-aware recommendations that filter based on player count, play time, and complexity.
-* **Pain Points:** It's time-consuming to cross-reference game recommendations with the specific constraints of their game group for a given evening.
+  * **Description:** Responsible for choosing games for their game night group, which may have varying player counts and preferences.
+  * **Needs:** Context-aware recommendations that filter based on player count, play time, and complexity.
+  * **Pain Points:** It's time-consuming to cross-reference game recommendations with the specific constraints of their game group for a given evening.
 
 ## 3. Competitive Landscape
 
 * **BoardGameGeek (BGG):** The market leader and primary data source. Its recommendation features are built-in but are often considered dated and not deeply personalized. It serves as both a competitor and a data provider.
-* **Recommender.games:** A web application that provides similarity-based recommendations. It is a direct competitor but focuses primarily on a single recommendation modality.
-* **Friend/Community Recommendations:** The most common method of discovery, but it is limited by the knowledge and collection of one's immediate social circle.
-* **Retailer Recommendations (e.g., Amazon):** Often generic and based on sales data ("Customers who bought this also bought..."), lacking nuanced understanding of game mechanics or themes.
+  * **Recommender.games:** A web application that provides similarity-based recommendations. It is a direct competitor but focuses primarily on a single recommendation modality.
+  * **Friend/Community Recommendations:** The most common method of discovery, but it is limited by the knowledge and collection of one's immediate social circle.
+  * **Retailer Recommendations (e.g., Amazon):** Often generic and based on sales data ("Customers who bought this also bought..."), lacking nuanced understanding of game mechanics or themes.
 
 ## 4. Market Opportunity & Strategy
 
