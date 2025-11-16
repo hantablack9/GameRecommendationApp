@@ -430,7 +430,7 @@ boardgame-recommender/
 
 ---
 
-## 🎓 Model Details
+## 🎓 Model Details (Refer [docs](docs) for more)
 
 ### RAG Recommender (Content-Based)
 
