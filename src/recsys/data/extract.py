@@ -3,12 +3,13 @@
 Data extraction utilities for the recsys project.
 Provides functions to extract data from zip files and load specific extracted files.
 """
-import yaml
 import zipfile
 from pathlib import Path
 
-from recsys.utils.paths  import get_project_root, check_config_file_exists
-from recsys.data.loader import load_extracted_data # Import the newly separated function
+import yaml
+
+from recsys.data.loader import load_extracted_data
+from recsys.utils.paths import check_config_file_exists, get_project_root
 
 
 def extract_data(project_root: Path, config: dict) -> tuple[Path, list[str]]:
