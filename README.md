@@ -185,6 +185,7 @@ uvicorn src.api.main:app --reload
 ```
 
 Visit:
+
 - API: http://localhost:8000
 - Interactive Docs: http://localhost:8000/docs
 - Health Check: http://localhost:8000/health
@@ -207,15 +208,17 @@ docker-compose down
 ## 📊 Dataset
 
 ### Primary Dataset: Kaggle BGG
+
 - **Source**: [BoardGameGeek Dataset on Kaggle](https://www.kaggle.com/datasets/threnjen/board-games-database-from-boardgamegeek)
 - **Size**: 22,000+ games, 411,000+ users, 19M+ ratings
-- **Features**: 
+- **Features**:
   - Game metadata (name, description, year, categories, mechanics)
   - User ratings and reviews
   - Play statistics
   - Designer/publisher information
 
 ### Live Data: BGG XML API
+
 - **Source**: [BoardGameGeek XML API2](https://boardgamegeek.com/wiki/page/BGG_XML_API2)
 - **Updates**: Weekly ETL pipeline
 - **Features**:
@@ -229,6 +232,7 @@ docker-compose down
 ## 🔧 API Endpoints
 
 ### Health & Status
+
 ```bash
 GET /health
 GET /
@@ -237,6 +241,7 @@ GET /
 ### Recommendations
 
 #### Get Recommendations Based on Games
+
 ```bash
 POST /api/v1/recommend/by-games
 Content-Type: application/json
@@ -264,6 +269,7 @@ Response:
 ```
 
 #### Find Similar Games
+
 ```bash
 GET /api/v1/recommend/similar/174430?k=10
 
@@ -271,6 +277,7 @@ Response: List of games similar to Gloomhaven
 ```
 
 #### User-Based Recommendations (Collaborative Filtering)
+
 ```bash
 POST /api/v1/recommend/user
 Content-Type: application/json
@@ -295,6 +302,7 @@ Response:
 ```
 
 #### Hybrid Recommendations
+
 ```bash
 POST /api/v1/recommend/hybrid
 Content-Type: application/json
@@ -322,6 +330,7 @@ Response:
 ```
 
 ### Game Information
+
 ```bash
 GET /api/v1/games/174430
 
